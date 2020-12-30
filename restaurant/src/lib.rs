@@ -14,29 +14,29 @@ pub mod back_of_house {
 
     pub struct Breakfast {
         pub toast: String,
-        seasonal_fruit: String
+        _seasonal_fruit: String
     }
 
     impl Breakfast {
         pub fn summer(toast: &str) -> Breakfast {
             Breakfast {
                 toast: String::from(toast),
-                seasonal_fruit: String::from("peaches")
+                _seasonal_fruit: String::from("peaches")
             }
         }
     }
 
-    fn cook_order() { }
+    fn _cook_order() { }
 
-    fn fix_incorrect_order() {
-        cook_order();
+    fn _fix_incorrect_order() {
+        _cook_order();
 
         // relative path to serve_order() defined up one level
-        super::serve_order();
+        super::_serve_order();
     }
 }
 
-fn serve_order() { }
+fn _serve_order() { }
 
 // bring the hosting namespace into scope
 use crate::front_of_house::hosting;
@@ -66,6 +66,6 @@ pub fn eat_at_restaurant() {
     meal.toast = String::from("Wheat");
     println!("I'd like {} toast please", meal.toast);
 
-    let order1 = Appetizer::Soup;
-    let order2 = Appetizer::Salad;
+    let _order1 = Appetizer::Soup;
+    let _order2 = Appetizer::Salad;
 }
